@@ -19,3 +19,21 @@ const users = [
   { id: '8', name: 'Simon Peterson', age: 30 },
   { id: '9', name: 'Daniel Cane', age: 51 },
 ];
+
+//1.
+let getAverage = arr => {
+  let reducer = (total, currentValue) => total + currentValue;
+  let sum = arr.reduce(reducer)
+  return sum / arr.length;
+}
+
+let ages = users.map(person => person.age);
+console.log(getAverage(ages));
+
+
+
+//2.
+const getUsersNames = [... new Set(users.flatMap(x=>[x.name]))]
+console.log(getUsersNames);
+
+
