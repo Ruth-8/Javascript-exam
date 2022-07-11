@@ -8,3 +8,16 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+document.getElementById('search').addEventListener('input', function(e){
+    let kg = e.target.value;
+    let input = document.getElementById('search');
+    let data = input.value;
+    document.getElementById('poundsOutput').innerHTML = kg * 2.2046;
+    document.getElementById('gramsOutput').innerHTML = kg / 0.0010000;
+    document.getElementById('ozOutput').innerHTML = kg * 35.274;
+    document.getElementById('output').style.bivibility = 'visible';
+
+    if (data == ''){
+        document.getElementById('output').style.visibility = 'hidden';
+    }
+})
