@@ -27,3 +27,11 @@
   margin-top: 50px;
   color: #333;
 }
+
+#output {
+  border: 1px solid grey;
+  padding: 1rem;
+  margin: 5rem;
+  background-color: rgb(208, 229, 236);
+  line-height: 2rem;
+}
