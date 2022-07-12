@@ -9,5 +9,5 @@ const display = document.getElementById("btn__state");
 
 btn.onclick = function () {
     count++;
-    display.innerHTML = count;
+    display.innerText = count;
 }
