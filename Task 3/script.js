@@ -13,15 +13,33 @@ turėti bent minimalų stilių ir būti responsive;
 
 const endpoint = 'https://api.github.com/users';
 
+let users = {};
+
 const results = document.querySelector('#output');
-const btn = document.querySelector('button');
+results.innerHTML = '';
+const img = document.createElement('img');
+const btn = document.getElementById('btn');
 btn.addEventListener('click', fetchData);
+const userCard = document.createElement('p');
+results.append(userCard);
+const login = document.createElement('p');
+img.src = card.avatar_url;
+img.setAttribute('alt', 'userPhoto');
+const avatar_url = document.createElement('p');
+avatar_url.append(img);
+userCard.append(login, avatar_url);
 
-function fetchData() {
+const fetchData = async () => {
+    try {
+        const response = await fetch (endpoint);
+        if(response.ok) {
+            URLSearchParams.avatars = await response.json();
+            enterData(users.avatars);
+        }
+    }catch(error){
+        console.error(error);
+    }
+};
 
-fetch(endpoint).then(function(res){
-    return res.json();
-}).then(function(data){
-    
-    });
-}
+        
+
