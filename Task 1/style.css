@@ -30,7 +30,7 @@ form {
 }
 
 #search {
-  width: 65%;
+  width: 95%;
   margin: 0;
   padding: 20px;
   outline: 0;
@@ -50,6 +50,17 @@ form {
   cursor: pointer;
   background-color: #000;
   color: #fff;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border: 1px white solid;
+  padding: 1rem;
+  margin: 1rem 30rem;
+  background-color: lightgrey;
+  color: black;
 }
 
 /* Tablet */
