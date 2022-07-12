@@ -2,7 +2,7 @@
 Turimas "users" masyvas. 
 
 Parašykite funckijas, kurios atlikas nurodytas užduotis:
-1. funkcija "filterDogOwers" - kaip argumentą priims masyvą ir duoto masyvo 
+1. funkcija "filterDogOwners" - kaip argumentą priims masyvą ir duoto masyvo 
 atveju grąžins "users", kurie turi augintinį.
 2. funkcija "filterAdults" - kaip argumentą priims masyvą ir duoto masyvo 
 atveju grąžins masyvą su "users", kurie yra pilnamečiai.
@@ -20,11 +20,13 @@ const users = [
   { id: '9', name: 'Daniel Cane', age: 51, hasDog: true },
 ];
 
+//1
+const filters = [true];
 
+const filterDogOwners = users.filter(val => filters.includes(val.hasDog));
+console.log(filterDogOwners)
 
-
-
-//2
+2
 const filterAdults = users.filter(function(user){
   return user.age >=18
 })
