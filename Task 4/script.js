@@ -8,17 +8,26 @@ nurodomas gamintojas ir jo pagaminti modeliai.
 Pastaba: Sukurta kortelė, kurioje yra informacija apie automobilį (brand), turi 
 turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
-
 const endpoint = 'cars.json';
-const results = document.getElementById('output');
-const table = document.createElement("table");
-results.append(table);
 
-const getCars = () =>
-fetch(endpoint).then((response) =>{
-    if(!response.ok) {
-        throw new Error("Error: " + response.status);
-    }
-    return response.json()
-})
-
+fetch(endpoint)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            const mainContainer = document.getElementById("output");
+            for (let i = 0; i < data.length; i++) {
+                const div = document.createElement("div");
+                div.innerHTML = 'Brand: ' + data[i].brand;
+                const div1 = document.createElement("div");
+                div1.innerHTML = 'Models: ' + data[i].models;
+                mainContainer.appendChild(div);
+                mainContainer.appendChild(div1);
+            }
+        }
